@@ -1,0 +1,20 @@
+char op;
+  if (cin >> op)
+  {
+    // Считали знак операции?
+    if (strchr("+-*/", op)) 
+    {
+      // Вычислить операнды.
+      double x = prefix(), y = prefix();
+      // Вычислить результат выполнения операции.
+      switch (op)
+      {
+      case '+': return x + y;
+      case '-': return x - y;
+      case '*': return x * y;
+      case '/': return x / y;
+      }
+    }
+    else // не знак операции -- вернуть считанный символ
+      cin.unget();
+  }
